@@ -1,0 +1,165 @@
+/* styles for index.html */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* styles for recommendation.html */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.back-button {
+    margin-top: 20px;
+}
+
+.back-button a {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.back-button a:hover {
+    background-color: #0056b3;
+}
+
+/* style artist info */
+.artist-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.artist-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.artist-info h2 {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.track-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.track-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.track-info {
+    flex: 1;
+    text-align: left;
+}
+
+.track-info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.track-info p {
+    font-size: 16px;
+    color: #888;
+    margin: 0;
+}
+
+.track-actions {
+    flex-shrink: 0;
+}
+
+.track-actions a {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.track-action a:hover {
+    background-color: #0056b3;
+}
+
+.back-button {
+    margin-top: 20px;
+}
+
+.back-button a {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.back-button a:hover {
+    background-color: #0056b3;
+}

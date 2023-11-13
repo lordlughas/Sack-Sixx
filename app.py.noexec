@@ -1,0 +1,53 @@
+"""import flask and spotipy library"""
+from flask import Flask, render_template, request
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+
+
+app = Flask(__name__)
+
+# spotify API credentials
+client_id = "dce16d9154074b96bb00d0b57de3df18"
+client_secret = "6db8070710384bf29f914334795ce0f9"
+
+# create a spotify client
+auth_manager = SpotifyClientCredentials(client_id = client_id, client_secret = client_secret)
+spotify = spotipy.Spotify(auth_manager)
+
+
+@app.route("/hello")
+def hello():
+    """Text flask app"""
+    return "Hello World"
+
+@app.route("/")
+def index():
+    """render the index page"""
+    return render_template("index.html")
+
+
+@app.route("/recommend", methods=["POST"])
+def recommend():
+    """query the spotify API to get the artist id and artist info through the artist name submitted"""
+    # Get the artist name from the form submission
+    artist_name = request.form["artist"]
+
+    # search for the artist on spotify
+    results = spotify.search(q="artist:" + artist_name, type="artist")
+
+    # Extract the artist's spotify ID
+    if len(results["artists"]["items"]) > 0:
+        artist_id = results["artists"]["items"]["0"]["id"]
+
+        # Get the top tracks of the artist
+        top_tracks = spotify.artist_top_tracks(artist_id)
+
+        # Extract the track names
+        track_names = [track["name"] for track in top_tracks["tracks"]]
+        return render_template("recommedation.html", artist=artist_name, tracks=track_names)
+    else:
+        return render_template("error.html")
+    
+
+if __name__ == "__main__":
+    app.run(debug=True)
